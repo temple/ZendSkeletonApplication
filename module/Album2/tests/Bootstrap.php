@@ -43,6 +43,7 @@ AutoloaderFactory::factory(
     )
 );
 
+
 // The module name is obtained using directory name or constant
 $moduleName = pathinfo($rootPath, PATHINFO_BASENAME);
 if (defined('MODULE_NAME')) {
@@ -65,9 +66,9 @@ if (isset($moduleDependencies)) {
 }
 
 
-$listenerOptions = new Zend\ModuleManager\Listener\ListenerOptions(array('module_paths' => $modulePaths));
-$defaultListeners = new Zend\ModuleManager\Listener\DefaultListenerAggregate($listenerOptions);
-$sharedEvents = new Zend\EventManager\SharedEventManager();
+$listenerOptions = new \Zend\ModuleManager\Listener\ListenerOptions(array('module_paths' => $modulePaths));
+$defaultListeners = new \Zend\ModuleManager\Listener\DefaultListenerAggregate($listenerOptions);
+$sharedEvents = new \Zend\EventManager\SharedEventManager();
 $moduleManager = new \Zend\ModuleManager\ModuleManager($modules);
 $moduleManager->getEventManager()->setSharedManager($sharedEvents);
 $moduleManager->getEventManager()->attachAggregate($defaultListeners);
