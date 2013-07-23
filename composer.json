@@ -6,9 +6,37 @@
         "framework",
         "zf2"
     ],
+    "repositories":[
+        {
+            "type": "composer",
+            "url": "https://packages.zendframework.com/"
+        },
+        {
+            "type": "git",
+            "url":"https://github.com/temple/ZFTool.git"
+        }
+    ],
+
+    
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": ">2.2.0rc1"
-    }
+        "zendframework/zendframework": ">2.2.0rc1",
+        "temple/zftool":"dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "suggest":{
+        "zendframework/zftool":"dev-master"
+    },
+
+    "autoload":{
+        "psr-0":{
+            "Application": "module/Application/src",
+            "Album": "module/Album/src",
+            "Proba": "module/Proba/src"
+        }
+    }    
 }
+
